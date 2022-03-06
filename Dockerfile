@@ -1,4 +1,4 @@
-FROM phusion/baseimage:bionic-1.0.0
+FROM phusion/baseimage:focal-1.0.0
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -6,10 +6,12 @@ RUN sed -i 's/archive.ubuntu.com/tw.archive.ubuntu.com/g' /etc/apt/sources.list 
       apt-get update && apt-get install -y \
       curl \
       fcgiwrap \
+      spawn-fcgi \
       unzip \
       vim \
       wget \
       cpanminus \
+      build-essential \
       nginx \
       --no-install-recommends && \
     rm -rf /var/lib/apt/lists/*
